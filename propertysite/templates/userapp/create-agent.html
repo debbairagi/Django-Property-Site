@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<body>
+    <br>
+    <br>
+    <br>
+  <div class="container bg-light shadow-md p-5 custom-form-layout">
+    <div class="text-center">
+        <h3>Apply For an Agent Account</h3>
+        <h5>Start managing the site from today!</h5>
+        <hr />
+    </div>
+    
+    <br />
+    <form action="" method="POST" autocomplete="off">
+      {% csrf_token %}
+
+                {{agent_form.first_name|as_crispy_field}}
+                <br>
+                {{agent_form.last_name|as_crispy_field}}
+                <br>
+                {{agent_form.email|as_crispy_field}}
+                <br>
+                {{agent_form.phone_number|as_crispy_field}}
+                <br>
+                {{agent_form.address|as_crispy_field}}
+                <br>
+                {{agent_form.city|as_crispy_field}}
+                <br>
+                {{agent_form.state|as_crispy_field}}
+                <br>
+                {{agent_form.zipcode|as_crispy_field}}
+                <br>
+                {{agent_form.biography|as_crispy_field}}
+                <br>
+      <button
+        class="btn btn-primary w-100 btn-black p-2"
+        type="submit"
+      >Create Account</button>
+    </form>
+    <br />
+    <div class="text-center">
+      <p>Already have an Agent account ? <a href="#">Login as A Agent</a> </p>
+    </div>
+  </div>
+</body>
+
+{% endblock %}

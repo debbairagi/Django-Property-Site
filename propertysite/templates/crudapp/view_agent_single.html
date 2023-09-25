@@ -1,0 +1,42 @@
+{% include 'crudapp/navbar.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DASHBOARD</title>
+</head>
+<link rel="stylesheet" href="https://bootswatch.com/5/flatly/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body>
+    <br>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <i class="fa fa-user-circle-o" aria-hidden="true"></i> &nbsp;
+                <strong>   
+                    {{agent.first_name|upper}}  {{agent.last_name|upper}} -
+                    {{agent.creation_date}}
+                </strong>
+                <hr> 
+                <p> <strong> ID: </strong> {{agent.id}} </p>
+                <p> <strong> Email: </strong> {{agent.email}} </p>
+                <p> <strong> Phone number: </strong> {{agent.phone}} </p>
+                <p> <strong> Address: </strong> {{agent.address}} </p>
+                <p> <strong> City: </strong> {{agent.city}} </p>
+                <p> <strong> State: </strong> {{agent.state}} </p>
+                <p> <strong> Zipcode: </strong> {{agent.zipcode}} </p>
+                <p> <strong> Biography: </strong> {{agent.biography}} </p>
+                <p> <strong> Creation date: </strong> {{agent.creation_date}} </p>
+            </div>
+        </div>
+        <br>
+        <a href="{% url 'view_agent' %}" class="btn btn-secondary"> Return &nbsp; <i class="fa fa-arrow-left" aria-hidden="true"></i> </a>
+    &nbsp;
+    </div>
+</body>
+</html>
