@@ -16,24 +16,7 @@
     <br />
     <form action="" method="POST" autocomplete="off">
       {% csrf_token %}
-      {{agent_form.first_name|as_crispy_field}}
-      <br>
-      {{agent_form.last_name|as_crispy_field}}
-      <br>
-      {{agent_form.email|as_crispy_field}}
-      <br>
-      {{agent_form.phone_number|as_crispy_field}}
-      <br>
-      {{agent_form.address|as_crispy_field}}
-      <br>
-      {{agent_form.city|as_crispy_field}}
-      <br>
-      {{agent_form.state|as_crispy_field}}
-      <br>
-      {{agent_form.zipcode|as_crispy_field}}
-      <br>
-      {{agent_form.biography|as_crispy_field}}
-      <br>
+      {{agent_form|crispy}}
       {% csrf_token %}
       <button class="btn btn-primary w-100 btn-black p-2" type="submit">Create Account</button>
     </form>

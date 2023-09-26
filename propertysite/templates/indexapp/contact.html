@@ -60,18 +60,11 @@
       </div>
       <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
         <form action="" method="POST" autocomplete="off">
-          {{form.name|as_crispy_field}}
-          <br>
-          {{form.email|as_crispy_field}}
-          <br>
-          {{form.subject|as_crispy_field}}
-          <br>
-          {{form.message|as_crispy_field}}
-          <br>
+          {{form|crispy}}
           {% csrf_token %}
-          <button type="submit" class="btn btn-info">    
-            Message &nbsp; <i class="fa fa-plus" aria-hidden="true"></i> 
-        </button>
+          <button type="submit" class="btn btn-info">
+            Message &nbsp; <i class="fa fa-plus" aria-hidden="true"></i>
+          </button>
         </form>
       </div>
     </div>
