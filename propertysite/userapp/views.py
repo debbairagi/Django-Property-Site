@@ -5,6 +5,8 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate
 from django.contrib.auth.decorators import login_required
 
+from django.contrib import messages
+
 
 
 # Create your views here.
@@ -17,7 +19,7 @@ def userapp_register(request):
 
         if register_form.is_valid():
             register_form.save()
-            # messages.success(request, 'Account created successfully!')
+            messages.success(request, 'Account created successfully!')
             return redirect('userapp_login')
 
     diction = {'register_form': register_form}
@@ -38,7 +40,7 @@ def userapp_login(request):
 
             if user is not None:
                 auth.login(request, user)
-                # messages.success(request, 'You have logged!')
+                messages.success(request, 'You have logged!')
                 return redirect('dashboard')
 
     diction = {'login_form': login_form}
@@ -47,6 +49,7 @@ def userapp_login(request):
 @login_required(login_url='userapp_login')
 def userapp_logout(request):
     auth.logout(request)
+    messages.success(request, 'You have logged out!')
     return redirect('index')
 
 

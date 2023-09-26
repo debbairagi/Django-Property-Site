@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 
 from indexapp.forms import CreateContactUSForm
+
+from django.contrib import messages
 # Create your views here.
 
 
@@ -24,6 +26,7 @@ def contact(request):
 		contact_us_form = CreateContactUSForm(request.POST)
 		if contact_us_form.is_valid():
 			contact_us_form.save()
+			messages.success(request, 'Contact Us Form Submitted Successfully. We Will contact you soon !')
 			return redirect('index')
 	diction = {'form':contact_us_form}
 	return render(request, 'indexapp/contact.html', context=diction)
