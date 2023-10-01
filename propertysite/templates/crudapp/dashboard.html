@@ -16,10 +16,10 @@
     <!-- Navbar area -->
     {% include 'crudapp/navbar.html' %}
     <br>
-    <div class="container custom-message-text">
+    <div class="container">
         {% if messages %}
             {% for message in messages %}
-            <p class="alert alert-success float-center text-center custom-message-text">
+            <p class="alert alert-success float-center text-center">
                 <i class="fa fa-check" aria-hidden="true"></i> &nbsp;{{ message }}
             </p>
             {% endfor %}

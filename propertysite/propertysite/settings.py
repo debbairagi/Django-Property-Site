@@ -32,6 +32,8 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+# SITE_ID=1
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -46,7 +48,24 @@ INSTALLED_APPS = [
 
     'crispy_forms',
     'crispy_bootstrap5',
+    
+    
+    # 'django.contrib.sites',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'allauth.socialaccount.providers.google',
 ]
+
+# SOCIAL_ACCOUNT_PROVIDERS = {
+#     'google':{
+#         'SCOPE':[
+#             'profile',
+#             'email',
+#         ],
+#         'AUTH_PARAMS':{'access_type':'online'}
+#     }
+# }
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
@@ -135,9 +154,17 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 # Optional, but required for production deployments
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AUTHENTICATION_BACKENDS = (
+#     "django.contrib.auth.backends.ModelBackend",
+#     'allauth.accounts.auth_backends.AuthenticationBackend',
+# )
+
+# LOGIN_REDIRECT_URL = 'userapp_login'
+# LOGOUT_REDIRECT_URL = 'index'
