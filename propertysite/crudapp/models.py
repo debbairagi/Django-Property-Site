@@ -18,6 +18,7 @@ class Property(models.Model):
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
     zipcode = models.CharField(max_length=10)
+    property_pics = models.ImageField(upload_to='property_pics/', blank=True)
     
     # Agent Relationship
     agent = models.ForeignKey(Agent, on_delete=models.CASCADE, related_name='properties')

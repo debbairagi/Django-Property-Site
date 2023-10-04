@@ -19,5 +19,5 @@ class LoginForm(AuthenticationForm):
 class CreateAgentForm(forms.ModelForm):
     class Meta:
         model = Agent
-        fields = ['first_name','last_name','email','phone_number','address','city','state','zipcode','biography',]
+        fields = "__all__"
 

@@ -20,6 +20,7 @@ class Agent(models.Model):
     
     # Additional Information
     biography = models.TextField()
+    image = models.ImageField(upload_to='images/', blank=True)
     
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
